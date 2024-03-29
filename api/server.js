@@ -12,4 +12,8 @@ server.use("/api/projects", projectsRouter);
 
 server.use("/api/tasks", tasksRouter);
 
+server.use("*", (req, res) => {
+  res.json({ api: "FROM SERVER JS" });
+});
+
 module.exports = server;
