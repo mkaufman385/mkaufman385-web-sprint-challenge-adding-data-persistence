@@ -1,4 +1,4 @@
-const projects = [
+const project = [
   {
     project_id: 1,
     project_name: "bar",
@@ -8,5 +8,5 @@ const projects = [
 ];
 
 exports.seed = async function (knex) {
-  await knex("projects").insert(projects);
+  await knex("project").insert(project);
 };
