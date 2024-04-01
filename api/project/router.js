@@ -2,9 +2,10 @@ const router = require("express").Router();
 const Project = require("./model");
 
 router.get("/", (req, res, next) => {
-  Project.getProjectById(req.params.project_id)
-    .then((project) => {
-      res.status(200).json(project);
+  Project.getAll()
+
+    .then((projects) => {
+      res.status(200).json(projects);
     })
     .catch(next);
 });
