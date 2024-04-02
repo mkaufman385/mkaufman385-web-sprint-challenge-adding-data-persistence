@@ -4,8 +4,12 @@ exports.up = async function (knex) {
     table.string("task_description", 128).notNullable();
     table.string("task_notes");
     table.boolean("task_completed").defaultTo(false);
-    table.integer("project_id").unsigned().notNullable();
-    table.foreign("project_id").references("project_id").inTable("projects");
+    table
+      .integer("project_id")
+      .unsigned()
+      .notNullable()
+      .references("project_id")
+      .inTable("projects");
   });
 };
 
