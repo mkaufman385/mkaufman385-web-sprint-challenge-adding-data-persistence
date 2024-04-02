@@ -9,7 +9,6 @@ async function getAll() {
     "task_completed"
   );
 
-  // Convert task_completed to boolean using ternary operator
   return tasks.map((task) => ({
     ...task,
     task_completed: task.task_completed === 1 ? true : false,
