@@ -1,15 +1,16 @@
 const db = require("../../data/dbConfig");
 
 async function getAll() {
-  // return db("tasks");
-  const tasks = await db("tasks").select(
-    "task_id",
-    "task_description",
-    "task_notes",
-    "task_completed"
-    // "project_name",
-    // "project_description"
-  );
+  const tasks = await db("tasks")
+    .select(
+      "tasks.task_id",
+      "tasks.task_description",
+      "tasks.task_notes",
+      "tasks.task_completed",
+      "projects.project_name",
+      "projects.project_description"
+    )
+    .leftJoin("projects", "tasks.project_id", "projects.project_id");
 
   return tasks.map((task) => ({
     ...task,
