@@ -1,7 +1,6 @@
 const db = require("../../data/dbConfig");
 
 async function getAll() {
-  // return db("projects");
   const projects = await db("projects").select(
     "project_id",
     "project_name",

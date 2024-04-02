@@ -7,6 +7,8 @@ async function getAll() {
     "task_description",
     "task_notes",
     "task_completed"
+    // "project_name",
+    // "project_description"
   );
 
   return tasks.map((task) => ({
