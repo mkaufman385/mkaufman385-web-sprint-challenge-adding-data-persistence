@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
     const [project_id] = await db("projects").insert({
       project_name,
       project_description,
-      project_completed: project_completed ? 1 : 0, // Convert boolean to integer
+      project_completed: project_completed ? 1 : 0, // Converting boolean to integer
     });
 
     // Fetching the newly created project
